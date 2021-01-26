@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BackEnd\DashboardController;
+use App\Http\Controllers\BackEnd\PengaduanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/panel', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'prosesLogin'])->name('proses.login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('proses.logout');
+
+Route::group(['middleware' => ['auth', 'rolecheck:admin, petugas']], function () {
+    Route::group(['prefix' => '/panel'], function(){
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan');
+    });
+});

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('backend/css/bootstrap.css') }}">
 
     <link rel="stylesheet" href="{{ asset('backend/vendors/iconly/bold.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/vendors/simple-datatables/style.css') }}">
 
     <link rel="stylesheet" href="{{ asset('backend/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/vendors/bootstrap-icons/bootstrap-icons.css') }}">
@@ -48,6 +49,12 @@
 
     <script src="{{ asset('backend/vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ asset('backend/js/pages/dashboard.js') }}"></script>
+    <script src="{{ asset('backend/vendors/simple-datatables/simple-datatables.js') }}"></script>
+    <script>
+        // Simple Datatable
+        let table1 = document.querySelector('#table1');
+        let dataTable = new simpleDatatables.DataTable(table1);
+    </script>
 
     <script src="{{ asset('backend/js/main.js') }}"></script>
 </body>

@@ -21,6 +21,27 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item">
+                    <a href="" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Data Pengguna</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item{{ request()->is('panel/pengaduan') ? ' active' : '' }}">
+                    <a href="{{ route('pengaduan') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Pengaduan</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item{{ request()->is('panel/pengaduan') ? ' active' : '' }}">
+                    <form action="{{route('proses.logout')}}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-block"> <i class="fas fa-sign-out-alt mt-2"></i> Logout</button>
+                    </form>
+                </li>
+
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
