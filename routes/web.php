@@ -30,3 +30,12 @@ Route::group(['middleware' => ['auth', 'rolecheck:admin, petugas']], function ()
         Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan');
     });
 });
+
+Route::group(['middleware' => ['auth', 'rolecheck:user']], function () {
+    /* user route */
+    // login 
+    // Input pengaduan    
+    // Search pengaduan
+    // detail pengaduan
+});
+

@@ -15,7 +15,7 @@ class CreatePengaduansTable extends Migration
     {
         Schema::create('pengaduans', function (Blueprint $table) {
             $table->id();
-            $table->integer('nomor_induk');
+            $table->integer('nomor_induk')->unique();
             $table->string('nama');
             $table->string('email');
             $table->integer('no_telp');
@@ -23,7 +23,7 @@ class CreatePengaduansTable extends Migration
             $table->enum('jenis_pengaduan',['pengaduan','aspirasi']);
             $table->date('tanggal_laporan');
             $table->text('laporan');
-            $table->string('berkas_pendukung');
+            $table->string('berkas_pendukung')->nullable();
             $table->enum('status',['pending','sukses','ditolak']);
             $table->timestamps();
         });
