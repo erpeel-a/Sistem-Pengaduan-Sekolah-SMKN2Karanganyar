@@ -57,29 +57,5 @@ class PengaduanController extends Controller
         ]);
         return Helper::success($data, 'Data Pengaduan berhasil di buat');
     }
-
-
-     // create // update //delete // show // search blog
-    //  public function index(Request $req, $id = false)
-    //  {
-    //      $title = $req->input('name');
-    //      $slug = $req->input('slug');
-    //      $content = $req->input('content');
-    //      $category = $req->input('category');
-    //      $limit = $req->input('limit',10);
-    //      $blog = Blog::with(['user', 'blog_category', 'blog_comment'])->where(['status' => 'publish']);
-    //      if($title){
-    //          $blog->where('title','like', '%' . $title . '%');  //berdasarkan judul
-    //      }
-    //      if($content){
-    //          $blog->where('content','like', '%' . $content . '%'); //berdasarkan isi konten
-    //      }
-    //      if($category){
-    //          $blog->where('blog_category_id','=', $category); //berdasarkan id Category
-    //      }
-    //      // dd($blog);
-    //      return JSONFormatter::success(
-    //          $blog->paginate($limit) , 'Data Blog Berhasil diambil');
-    //  }
  
 }
