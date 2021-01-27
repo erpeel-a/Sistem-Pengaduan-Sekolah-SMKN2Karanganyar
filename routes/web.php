@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BackEnd\DashboardController;
+use App\Http\Controllers\BackEnd\DataPetugasController;
+use App\Http\Controllers\BackEnd\DataUserController;
 use App\Http\Controllers\BackEnd\PengaduanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
@@ -42,6 +44,24 @@ Route::group(['middleware' => ['auth', 'rolecheck:admin, petugas']], function ()
     Route::group(['prefix' => '/panel'], function(){
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan');
+        Route::get('/masterdata/users', [DataUserController::class, 'index'])->name('data.users');
+        Route::get('/masterdata/petugas', [DataPetugasController::class, 'index'])->name('data.petugas');
+    });
+});
+
+//masterdata
+Route::group(['middleware' => ['auth', 'rolecheck:admin']], function () {
+    Route::group(['prefix' => '/panel'], function(){
+        Route::group(['prefix' => '/masterdata'], function() {
+            //users
+
+            //petugas
+            Route::get('/petugas/create', [DataPetugasController::class, 'create'])->name('create.petugas');
+            Route::post('/petugas/create', [DataPetugasController::class, 'store'])->name('store.petugas');
+            Route::get('petugas/edit/{id}', [DataPetugasController::class, 'edit'])->name('edit.petugas');
+            Route::put('/petugas/update/{id}', [DataPetugasController::class, 'update'])->name('update.petugas');
+            Route::delete('/petugas/delete/{id}', [DataPetugasController::class, 'destroy'])->name('destroy.petugas');
+        });
     });
 });
 

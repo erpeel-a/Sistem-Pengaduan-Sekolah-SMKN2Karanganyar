@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="{{ asset('backend/vendors/iconly/bold.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/vendors/simple-datatables/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/vendors/fontawesome/all.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('backend/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/vendors/bootstrap-icons/bootstrap-icons.css') }}">
@@ -46,6 +47,7 @@
     </div>
     <script src="{{ asset('backend/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('backend/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('backend/vendors/fontawesome/all.min.js') }}"></script>
 
     <script src="{{ asset('backend/vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ asset('backend/js/pages/dashboard.js') }}"></script>
