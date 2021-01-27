@@ -21,11 +21,19 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a href="" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Data Pengguna</span>
+                <li class="sidebar-item  has-sub{{ request()->is('panel/masterdata/*') ? ' active' : '' }}">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Master Data</span>
                     </a>
+                    <ul class="submenu{{ request()->is('panel/masterdata/*') ? ' active' : '' }}">
+                        <li class="submenu-item{{ request()->is('panel/masterdata/petugas') ? ' active' : '' }}">
+                            <a href="{{ route('data.petugas') }}">Data Petugas</a>
+                        </li>
+                        <li class="submenu-item{{ request()->is('panel/masterdata/users') ? ' active' : '' }}">
+                            <a href="{{ route('data.users') }}">Data User</a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="sidebar-item{{ request()->is('panel/pengaduan') ? ' active' : '' }}">
