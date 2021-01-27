@@ -18,21 +18,24 @@ class UserSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt('adminadmin'),
-            'role' => 'admin'
+            'role' => 'admin',
+            'nomor_induk' => 002011211
         ]);
 
         User::create([
             'name' => 'petugas',
             'email' => 'petugas@user.com',
             'password' => bcrypt('petugas123'),
-            'role' => 'petugas'
+            'role' => 'petugas',
+            'nomor_induk' => 002311211
         ]);
 
         User::create([
             'name' => 'user',
             'email' => 'user@user.com',
             'password' => bcrypt('user123'),
-            'role' => 'user'
+            'role' => 'user',
+            'nomor_induk' => 002211211
         ]);
     }
 }

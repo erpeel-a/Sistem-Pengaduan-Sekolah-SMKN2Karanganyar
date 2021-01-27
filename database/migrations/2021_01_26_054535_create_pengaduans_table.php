@@ -15,7 +15,9 @@ class CreatePengaduansTable extends Migration
     {
         Schema::create('pengaduans', function (Blueprint $table) {
             $table->id();
-            $table->integer('nomor_induk')->unique();
+            $table->string('kode_pengaduan')->unique();
+            $table->string('judul_laporan');
+            $table->string('nomor_induk');
             $table->string('nama');
             $table->string('email');
             $table->integer('no_telp');
