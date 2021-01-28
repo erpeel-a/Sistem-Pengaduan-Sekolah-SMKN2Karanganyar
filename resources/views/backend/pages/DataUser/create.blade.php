@@ -4,14 +4,14 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Tambah Petugas</h3>
+                <h3>Tambah User</h3>
                 <p class="text-subtitle text-muted">For user to check they list</p>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tambah Petugas</li>
+                        <li class="breadcrumb-item active" aria-current="page">Tambah User</li>
                     </ol>
                 </nav>
             </div>
@@ -20,7 +20,7 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
-                <form class="form form-horizontal" action="{{ route('store.petugas') }}" method="post">
+                <form class="form form-horizontal" action="{{ route('store.user') }}" method="post">
                     @csrf
                     <div class="form-body">
                         <div class="row">
@@ -88,7 +88,7 @@
                                 <label>Role</label>
                             </div>
                             <div class="col-md-8 form-group">
-                                <input type="text" class="form-control" name="role" value="petugas" readonly>
+                                <input type="text" class="form-control" name="role" value="user" readonly>
                             </div>
                             <div class="col-md-4">
                                 <label>Password</label>

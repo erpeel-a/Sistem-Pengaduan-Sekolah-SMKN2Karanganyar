@@ -38,11 +38,47 @@
                                 @enderror
                             </div>
                             <div class="col-md-4">
+                                <label>No Induk</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="text" class="form-control @error('nomor_induk') is-invalid @enderror" value="{{ old('nomor_induk') ?? $petugas->nomor_induk }}" name="nomor_induk" placeholder="Nomor Induk">
+                                @error('nomor_induk')
+                                <div class="invalid-feedback">
+                                    <i class="bx bx-radio-circle"></i>
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="col-md-4">
                                 <label>Email</label>
                             </div>
                             <div class="col-md-8 form-group">
                                 <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ $petugas->email }}" name="email" placeholder="Email" readonly>
                                 @error('email')
+                                <div class="invalid-feedback">
+                                    <i class="bx bx-radio-circle"></i>
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="col-md-4">
+                                <label>Tempat Lahir</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" value="{{ old('tempat_lahir') ?? $petugas->tempat_lahir }}" name="tempat_lahir" placeholder="Tempat Lahir">
+                                @error('tempat_lahir')
+                                <div class="invalid-feedback">
+                                    <i class="bx bx-radio-circle"></i>
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="col-md-4">
+                                <label>Tanggal Lahir</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" value="{{ old('tanggal_lahir') ?? $petugas->tanggal_lahir }}" name="tanggal_lahir" placeholder="Tanggal Lahir">
+                                @error('tanggal_lahir')
                                 <div class="invalid-feedback">
                                     <i class="bx bx-radio-circle"></i>
                                     {{ $message }}
