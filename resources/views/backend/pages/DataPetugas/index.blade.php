@@ -30,7 +30,9 @@
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>No Induk</th>
                             <th>Email</th>
+                            <th>Lahir</th>
                             <th>opsi</th>
                         </tr>
                     </thead>
@@ -38,7 +40,9 @@
                         @foreach ($petugas as $item)
                         <tr>
                             <td>{{ $item->name }}</td>
+                            <td>{{ $item->nomor_induk }}</td>
                             <td>{{ $item->email }}</td>
+                            <td>{{ $item->tempat_lahir }}, {{ $item->tanggal_lahir }}</td>
                             <td class="d-flex">
                                 <a href="{{ route('edit.petugas', Crypt::Encrypt($item->id)) }}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
                                 <form action="{{ route('destroy.petugas', Crypt::Encrypt($item->id)) }}" method="post">

@@ -20,12 +20,19 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
-                <a href="" class="btn btn-primary">Tambah</a>
+                <a href="{{ route('create.user') }}" class="btn btn-primary">Tambah</a>
+                @if (session('status'))
+                    <div class="alert alert-success mt-1">
+                        {{ session('status') }}
+                    </div>
+                @endif
                 <table class="table table-striped" id="table1">
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>No Induk</th>
                             <th>Email</th>
+                            <th>Lahir</th>
                             <th>opsi</th>
                         </tr>
                     </thead>
@@ -33,10 +40,16 @@
                         @foreach ($users as $user)
                         <tr>
                             <td>{{ $user->name }}</td>
+                            <td>{{ $user->nomor_induk }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>
-                                <a href="" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                <a href="" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                            <td>{{ $user->tempat_lahir }}, {{ $user->tanggal_lahir }}</td>
+                            <td class="d-flex">
+                                <a href="{{ route('edit.user', Crypt::Encrypt($user->id)) }}" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                                <form action="{{ route('destroy.user', Crypt::Encrypt($user->id)) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
