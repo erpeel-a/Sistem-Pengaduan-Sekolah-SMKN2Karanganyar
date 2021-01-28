@@ -30,7 +30,10 @@ class DataPetugasController extends Controller
     {
         $req->validate([
             'name' => 'required',
+            'nomor_induk' => 'required|numeric',
             'email' => 'required|unique:users',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
             'role' => 'required',
             'password' => 'required'
         ]);
@@ -39,6 +42,9 @@ class DataPetugasController extends Controller
             'email' => $req->email,
             'role' => $req->role,
             'password' => bcrypt($req->password),
+            'nomor_induk' => $req->nomor_induk,
+            'tempat_lahir' => $req->tempat_lahir,
+            'tanggal_lahir' => $req->tanggal_lahir,
         ]);
         return redirect(route('data.petugas'))->with('status', 'Data Petugas Berhasil Ditambahkan');
     }
@@ -57,7 +63,10 @@ class DataPetugasController extends Controller
     {
         $req->validate([
             'name' => 'required',
+            'nomor_induk' => 'required|numeric',
             'email' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
             'role' => 'required',
             'password' => 'required'
         ]);
@@ -66,6 +75,9 @@ class DataPetugasController extends Controller
             'email' => $req->email,
             'role' => $req->role,
             'password' => bcrypt($req->password),
+            'nomor_induk' => $req->nomor_induk,
+            'tempat_lahir' => $req->tempat_lahir,
+            'tanggal_lahir' => $req->tanggal_lahir,
         ]);
         return redirect(route('data.petugas'))->with('status', 'Data Petugas Berhasil Diubah');
     }

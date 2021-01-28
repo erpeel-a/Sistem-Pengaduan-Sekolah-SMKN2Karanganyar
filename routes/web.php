@@ -54,7 +54,11 @@ Route::group(['middleware' => ['auth', 'rolecheck:admin']], function () {
     Route::group(['prefix' => '/panel'], function(){
         Route::group(['prefix' => '/masterdata'], function() {
             //users
-
+            Route::get('/users/create', [DataUserController::class, 'create'])->name('create.user');
+            Route::post('/users/create', [DataUserController::class, 'store'])->name('store.user');
+            Route::get('users/edit/{id}', [DataUserController::class, 'edit'])->name('edit.user');
+            Route::put('/users/update/{id}', [DataUserController::class, 'update'])->name('update.user');
+            Route::delete('/users/delete/{id}', [DataUserController::class, 'destroy'])->name('destroy.user');
             //petugas
             Route::get('/petugas/create', [DataPetugasController::class, 'create'])->name('create.petugas');
             Route::post('/petugas/create', [DataPetugasController::class, 'store'])->name('store.petugas');
