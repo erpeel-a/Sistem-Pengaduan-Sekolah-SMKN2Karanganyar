@@ -17,7 +17,7 @@
                 kepada kami jika ada
                 Pengaduan atau pun Aspirasi yang dapat menjadi langkah awal untuk kita menjadi lebih baik lagi.</p>
               <div class="relative flex flex-col sm:flex-row sm:space-x-4">
-                <a href="input-pengaduan.html"
+                <a href="{{url('site/buat-pengaduan')}}"
                   class="flex items-center w-full  px-6 py-3 mb-3 text-md text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto">
                   Buat Pengaduan
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none"

@@ -20,22 +20,7 @@ use App\Http\Controllers\SiteController;
 */
 
 Route::get('/',[SiteController::Class,'index']);
-
-Route::group(['prefix' => 'site'], function(){
-    Route::get('/sukses',[SiteController::Class,'success']);
-    // user login
-    Route::get('/login/user',[SiteController::Class,'user_login']);
-    Route::post('/login/user',[SiteController::Class,'handleUserLogin']);
-    
-    //  pengaduan
-    Route::get('/buat-pengaduan',[SiteController::Class,'create']);
-    Route::post('/buat-pengaduan',[SiteController::Class,'store']);
-    Route::get('/cek-pengaduan',[SiteController::Class,'check_pengaduan']);
-    Route::get('/pengaduan/{id}',[SiteController::Class,'handleDetail']);
-
-});
-
-
+// admin dashboard login
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'prosesLogin'])->name('proses.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('proses.logout');
@@ -66,6 +51,18 @@ Route::group(['middleware' => ['auth', 'rolecheck:admin']], function () {
 });
 
 Route::group(['middleware' => ['auth', 'rolecheck:user']], function () {
+    Route::group(['prefix' => 'site'], function(){
+        Route::get('/sukses',[SiteController::Class,'success'])->name('success');    
+        //  pengaduan
+        Route::get('/buat-pengaduan',[SiteController::Class,'create']);
+        Route::post('/buat-pengaduan',[SiteController::Class,'store'])->name('pengaduan.store');
+        // ceck pengaduan
+        Route::post('/cari-pengaduan',[SiteController::Class,'handleSearch'])->name('pengaduan.search');
+        Route::get('/cek-pengaduan',[SiteController::Class,'handleCheck'])->name('pengaduan.check');
+        Route::get('/pengaduan/{id}',[SiteController::Class,'handleDetail'])->name('detail.pengaduan');
+    
+    });
+    
     /* user route */
     // login 
     // Input pengaduan    

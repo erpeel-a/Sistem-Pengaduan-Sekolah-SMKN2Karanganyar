@@ -9,35 +9,50 @@
                     class="w-full h-auto p-10 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
                     <h3 class="mb-6 text-2xl font-medium text-center">Cari <strong>Pengaduan / Aspirasi</strong> Anda
                     </h3>
+                 <form action="{{route('pengaduan.search')}}" method="POST">
+                    @csrf
                     <label for="" class="text-gray-600">Cari</label>
                     <div class="block mb-4 border border-gray-200 rounded-lg">
                         <input type="text" name="keyword" id="nis"
                             class="block w-full px-4 py-3 border-2 border-transparent rounded-lg focus:border-blue-500 focus:outline-none"
-                            placeholder="Pencarian dapat berdasarkan NIS/NIP user atau judul pengaduan">
+                            placeholder="Pencarian berdasarkan  judul pengaduan atau Masalah yang di laporkan">
                     </div>
                     <div class="block">
                         <button class="w-full px-3 py-4  font-medium text-white bg-blue-600 rounded-lg">Cari</button>
                     </div>
+                 </form>
                     <!-- card report -->
-                    {{-- <div class="w-full px-6  py-6 mx-auto mt-10 shadow-lg bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
-          <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Judul Pengaduan
-          </h3>
-          <p class="text-sm font-semibold  text-cyan-500 sm:text-md md:text-md">Nama Pengadu
-          </p>
-          <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quasi, ea. Autem reiciendis fugit neque dolore error commodi obcaecati optio! Porro.</p>
-            <div class="bg-green-600 font-semibold text-center mt-4 text-white p-2 rounded  leading-none flex items-center">
-              Dikonfirmasi</span>
-            </div>
-            <div class="bg-red-600  font-semibold  text-center mt-4 text-white p-2 rounded  leading-none flex items-center">
-              belum Dikonfirmasi</span>
-            </div>
-            <div class="block">
-              <a href="detail-tanggapan.html"
-                  class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md mt-5 lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Detail</a>
-            </div>
-        </div> --}}
-
+                    @forelse ($pengaduan as $item)
+                    <div
+                        class="w-full px-6  py-6 mx-auto mt-10 shadow-xl bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow-xl lg:w-5/6 xl:w-2/3">
+                        <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">{{$item->judul_laporan}}
+                        </h3>
+                        <p class="text-sm font-semibold  text-cyan-500 sm:text-md md:text-md">Nama Pelapor : {{$item->nama}} 
+                        </p>
+                        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">{{\Str::limit($item->laporan, 20)}}</p>
+                        @if ($item->status === 'pending')    
+                            <div
+                                class="bg-yellow-500 font-semibold text-center mt-4 text-white p-2 rounded  leading-none flex items-center">
+                                Pending</span>
+                            </div>
+                        @elseif($item->status === 'ditolak')
+                            <div
+                                class="bg-red-600  font-semibold  text-center mt-4 text-white p-2 rounded  leading-none flex items-center">
+                                Di tolak</span>
+                            </div>
+                        @else        
+                            <div
+                                class="bg-green-600 font-semibold text-center mt-4 text-white p-2 rounded  leading-none flex items-center">
+                            Di konfirmasi </span>
+                            </div>
+                        @endif
+                        <div class="block">
+                            <a href="{{route('detail.pengaduan', $item->id)}}"
+                                class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md mt-5 lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Detail</a>
+                        </div>
+                    </div>
+                  
+                    @empty
                     <div class="container mx-auto">
                         <div class="w-full bg-red-500 rounded-md mt-8 text-white">
                             <div class="flex justify-between items-center container mx-auto py-4 px-6">
@@ -53,6 +68,11 @@
                             </div>
                         </div>
                     </div>
+                    @endforelse
+                    <div class="my-3">
+                        {{ $pengaduan->links() }}
+                    </div>
+
                     <!-- card report -->
                 </div>
             </div>

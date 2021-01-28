@@ -17,9 +17,9 @@ class AuthController extends Controller
     {
         // dd($req->all());
         if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
-            return redirect(route('dashboard'));
+            if(Auth::user()->role === 'user' ) { return redirect('/');   }return redirect(route('dashboard'));
         } else {
-            return redirect()->back()->with('status', 'Email atau Password Yang Anda Masukan Salah');
+            return redirect()->back()->with('error', 'Email atau Password Yang Anda Masukan Salah');
         }
     }
 
@@ -27,7 +27,7 @@ class AuthController extends Controller
     {
         if (Auth::user()) {
             Auth::logout();
-            return redirect()->route('login');
+            return redirect()->route('login')->with('status', 'Logout Berhasil, Silahkan Login kembali untuk memakai layanan kami');
         } else {
             return redirect()->back();
         }

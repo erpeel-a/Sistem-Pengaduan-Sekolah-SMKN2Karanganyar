@@ -27,12 +27,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => '/v1'], function(){
         Route::post('/login', [AuthController::class, 'login']);
         Route::post('/refresh',  [AuthController::class, 'refresh']);
+        Route::get('/pengaduan', [PengaduanController::class, 'index']);
      Route::group(['middleware' => 'jwt.verify'], function(){
         // logout
         Route::post('/logout', [AuthController::class, 'logout']);  
         // input pengaduan
         Route::post('/pengaduan', [PengaduanController::class, 'store']);
-        Route::get('/pengaduan', [PengaduanController::class, 'index']);
             
         // search pengaduan
         

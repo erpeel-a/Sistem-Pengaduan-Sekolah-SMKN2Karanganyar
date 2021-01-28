@@ -20,7 +20,7 @@ class CreatePengaduansTable extends Migration
             $table->string('nomor_induk');
             $table->string('nama');
             $table->string('email');
-            $table->integer('no_telp');
+            $table->string('no_telp', 12);
             $table->string('alamat');
             $table->enum('jenis_pengaduan',['pengaduan','aspirasi']);
             $table->date('tanggal_laporan');

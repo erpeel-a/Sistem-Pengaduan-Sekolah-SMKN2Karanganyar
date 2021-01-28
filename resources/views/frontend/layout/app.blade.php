@@ -30,7 +30,7 @@
                   2 Karanganyar<span class="text-indigo-600">.</span></a>
                 <div
                   class="flex flex-col items-start justify-center w-full text-center md:w-2/3 md:mt-0 md:flex-row md:items-center">
-                  <a href="#"
+                  <a href="{{url('/')}}"
                     class="inline-block w-full px-6 py-2 mx-0 font-medium text-left text-indigo-600 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center">Beranda</a>
                   <a href="#"
                     class="inline-block w-full px-6 py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-600 lg:mx-3 md:text-center">Tentang</a>
@@ -39,16 +39,32 @@
                     Pengaduan</a>
                   <a href="#"
                     class="inline-block w-full px-6 py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-600 lg:mx-3 md:text-center">FAQ</a>
+                    @auth
+                    <a href="{{route('pengaduan.check')}}"
+                    class="inline-block w-full px-6 py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-600 lg:mx-3 md:text-center">Cari Pengaduan</a>
+                    @endauth
                 </div>
                 <div
                   class="flex flex-col items-start justify-end w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0">
 
                   <span class="inline-flex w-full shadow-sm md:rounded-full md:w-auto">
-                    <a href="{{url('site/login/user')}}"
-                      class="inline-flex items-center w-full mx-2 px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Login</a>
-                    <a href="{{url('site/buat-pengaduan')}}"
+                    @guest
+                    <a href="{{url('/login')}}"
+                    class="inline-flex items-center w-full mx-2 px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Login</a>
+                    @endguest
+                    @auth
+                      <a href="{{url('site/buat-pengaduan')}}"
                       class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Buat
                       Pengaduan</a>
+                    @endauth
+                    @auth
+                    <form action="{{url('/logout')}}" method="post">
+                      @csrf
+                      <button type="sumbit"
+                      class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 mx-2">
+                      Logout</button>
+                    </form>
+                  @endauth
                   </span>
                 </div>
               </div>
