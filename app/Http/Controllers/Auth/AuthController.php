@@ -20,10 +20,7 @@ class AuthController extends Controller
             if(Auth::user()->role === 'user' ) {
                return redirect('/');   
             }
-            if (Auth::user()->role === 'admin'){
-                return redirect(route('dashboard'));
-            }
-            if( Auth::user()->role === 'petugas' ){
+            if (Auth::user()->role === 'admin' || Auth::user()->role === 'petugas' ){
                 return redirect(route('dashboard'));
             }
         } else {
