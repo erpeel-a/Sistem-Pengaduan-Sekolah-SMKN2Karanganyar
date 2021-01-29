@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\API\TanggapanController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\BackEnd\DashboardController;
-use App\Http\Controllers\BackEnd\DataPetugasController;
-use App\Http\Controllers\BackEnd\DataUserController;
-use App\Http\Controllers\BackEnd\PengaduanController;
+use App\Http\Controllers\BackEnd\{
+    DashboardController,DataPetugasController,
+    DataUserController,PengaduanController,
+    TanggapanController
+};
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 
@@ -21,7 +22,6 @@ use App\Http\Controllers\SiteController;
 */
 
 Route::get('/', [SiteController::Class, 'index']);
-// admin dashboard login
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'prosesLogin'])->name('proses.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('proses.logout');
@@ -29,14 +29,12 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('proses.logout')
 Route::group(['middleware' => ['auth', 'rolecheck:admin, petugas']], function () {
     Route::group(['prefix' => '/panel'], function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
         //pengaduan
         Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan');
         Route::get('/pengaduan/detail/{id}', [PengaduanController::class, 'detail'])->name('detail.laporan');
         // Route::post('/pengaduan/detail/{id}', [PengaduanController::class, 'update'])->name('update.laporan');
         Route::get('/tanggapan/{id}', [PengaduanController::class, 'tanggapan'])->name('tanggapan');
         Route::post('/tanggapan/{id}', [PengaduanController::class, 'storeTanggapan'])->name('store.tanggapan');
-
         //masterdata
         Route::get('/masterdata/users', [DataUserController::class, 'index'])->name('data.users');
         Route::get('/masterdata/petugas', [DataPetugasController::class, 'index'])->name('data.petugas');
@@ -74,10 +72,4 @@ Route::group(['middleware' => ['auth', 'rolecheck:user']], function () {
         Route::get('/cek-pengaduan', [SiteController::Class, 'handleCheck'])->name('pengaduan.check');
         Route::get('/pengaduan/{id}', [SiteController::Class, 'handleDetail'])->name('detail.pengaduan');
     });
-
-    /* user route */
-    // login 
-    // Input pengaduan    
-    // Search pengaduan
-    // detail pengaduan
 });

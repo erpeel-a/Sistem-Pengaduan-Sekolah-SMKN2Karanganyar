@@ -24,7 +24,7 @@
                     <!-- card report -->
                     @forelse ($pengaduan as $item)
                     <div
-                        class="w-full px-6  py-6 mx-auto mt-10 shadow-xl bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow-xl lg:w-5/6 xl:w-2/3">
+                        class="w-full px-6  py-6 mx-auto mt-10 shadow-2xl bg-white border border-gray-200 rounded-xl sm:px-8 md:px-12 sm:py-8 sm:shadow-2xl lg:w-5/6 xl:w-2/3">
                         <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">{{$item->judul_laporan}}
                         </h3>
                         <p class="text-sm font-semibold  text-cyan-500 sm:text-md md:text-md">Nama Pelapor : {{$item->nama}} 
@@ -46,10 +46,13 @@
                             Di konfirmasi </span>
                             </div>
                         @endif
+                      
+                        @if ($item->status === 'sukses' || $item->status === 'ditolak')
                         <div class="block">
-                            <a href="{{route('detail.pengaduan', $item->id)}}"
+                            <a href="{{route('detail.pengaduan', Crypt::Encrypt($item->id))}}"
                                 class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md mt-5 lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Detail</a>
                         </div>
+                        @endif
                     </div>
                   
                     @empty

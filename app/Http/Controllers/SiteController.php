@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Pengaduan;
+use App\Models\Tanggapan;
 use Illuminate\Support\Str;
-
 class SiteController extends Controller
 {
     public function index()
@@ -54,31 +54,28 @@ class SiteController extends Controller
         ]);
         return redirect()->route('success');
     }
+    public function handleDetail($id = false)
+    {
+        $dec = \Crypt::Decrypt($id);
+        return view('frontend.detail-pengaduan', [
+            'groupItem' => Tanggapan::with(['user', 'pengaduan'])->where('pengaduan_id', $dec)->first()
+        ]);
+    }
 
+    public function handleSearch(Request $request)
+    {
+        return view('frontend.cek-pengaduan', [
+            'pengaduan' => Pengaduan::where('judul_laporan', 'like', '%' . $request->keyword . '%')->paginate(3)
+        ]);
+    }
+
+    public function handleCheck(Request $request)
+    {
+        return view('frontend.cek-pengaduan', ['pengaduan' => Pengaduan::paginate(3)]);
+    }
     // sukses page
     public function success()
     {
         return view('frontend.sukses');
     }
-
-
-    // detail 
-    public function handleDetail($id = false)
-    {
-        return view('frontend.detail-pengaduan');
-    }
-
-    public function handleSearch(Request $request)
-    {
-        $pengaduan = Pengaduan::where('judul_laporan', 'like', '%' . $request->keyword . '%')->paginate(3);
-        return view('frontend.cek-pengaduan', compact('pengaduan'));
-        // dd($pengaduan);
-    }
-
-    public function handleCheck(Request $request)
-    {
-        $pengaduan = Pengaduan::paginate(3);
-        return view('frontend.cek-pengaduan', compact('pengaduan'));
-    }
-
 }

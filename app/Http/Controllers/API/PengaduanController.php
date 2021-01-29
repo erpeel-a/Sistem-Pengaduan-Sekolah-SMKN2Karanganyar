@@ -20,8 +20,6 @@ class PengaduanController extends Controller
             $data = Pengaduan::findOrfail($id);
         }else if($judul_laporan){
             $data = Pengaduan::where('judul_laporan', 'like', '%'. $judul_laporan. '%')->paginate(6);
-        }else  if ($kode_pengaduan){
-            $data = Pengaduan::where('kode_pengaduan',  $kode_pengaduan)->paginate(6);
         }else{
             $data = Pengaduan::paginate(6);
         }
@@ -32,10 +30,11 @@ class PengaduanController extends Controller
     {
         $is_valid = Validator::make($req->all(), [
             'kode_pengaduan' => 'unique',
+            'judul_laporan' => 'required',
             'nomor_induk' => 'required',
             'nama' => 'required',
             'email' => 'required',
-            'no_telp' => 'required',
+            'no_telp' => 'required|size:12',
             'alamat'=>'required',
             'jenis_pengaduan' =>'required',
             'tanggal_laporan' => 'required',

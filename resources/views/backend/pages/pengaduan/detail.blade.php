@@ -84,7 +84,7 @@
                             <td>:</td>
                             <td>
                                 {{ $laporan->berkas_pendukung }}
-                                <a href="{{ asset($laporan->berkas_pendukung) }}" class="btn btn-primary"><i class="fas fa-download"></i></a>
+                                <a href="{{ asset($laporan->berkas_pendukung) }}" download="{{$laporan->berkas_pendukung}}" class="btn btn-primary"><i class="fas fa-download"></i></a>
                             </td>
                         </tr>
                     </table>

@@ -14,4 +14,10 @@ class Tanggapan extends Model
         'user_id',
         'tanggapan'
     ];
+    public function pengaduan(){
+        return $this->belongsTo(Pengaduan::class, 'pengaduan_id', 'id');
+    }
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

@@ -19,6 +19,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function tanggapan(){
+        return $this->hasMany(tanggapan::class, 'user_id', 'id');
+    }
     /**
      * The attributes that are mass assignable.
      *
