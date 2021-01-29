@@ -83,18 +83,30 @@
                             <td>Berkas Pendukung</td>
                             <td>:</td>
                             <td>
-                                {{ $laporan->berkas_pendukung }}
-                                <a href="{{ asset($laporan->berkas_pendukung) }}" download="{{$laporan->berkas_pendukung}}" class="btn btn-primary"><i class="fas fa-download"></i></a>
+                                @if ($laporan->berkas_pendukung)
+                                    {{ $laporan->berkas_pendukung }}
+                                    <a href="{{ asset($laporan->berkas_pendukung) }}" download="{{$laporan->berkas_pendukung}}" class="btn btn-primary"><i class="fas fa-download"></i></a>
+                                @else
+                                Tidak ada berkas
+                                @endif
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="mt-4">
-                    <h4>Opsi</h4>
+                    <h4>Status</h4>
                     @if ($laporan->status === 'sukses')
                         <button class="btn btn-outline-success">Laporan Diterima</button>
+                        <div class="mt-4">
+                            Tanggapan : 
+                            <p>{{ $laporan->tanggapan->tanggapan }}</p>{{ $laporan->tanggapan->user->name }}
+                        </div>
                     @elseif($laporan->status === 'ditolak')
                         <button class="btn btn-outline-danger">Laporan Ditolak</button>
+                        <div class="mt-4">
+                            Tanggapan : 
+                            <p>{{ $laporan->tanggapan->tanggapan }}</p>{{ $laporan->tanggapan->user->name }}
+                        </div>
                     @else
                         <a href="{{ route('tanggapan',  Crypt::Encrypt($laporan->id)) }}" class="btn btn-primary">Tanggapi</a>
                     @endif

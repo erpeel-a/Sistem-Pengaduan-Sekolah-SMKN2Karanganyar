@@ -21,6 +21,7 @@
                     </a>
                 </li>
 
+                @if (Auth::user()->role ==='admin')
                 <li class="sidebar-item  has-sub{{ request()->is('panel/masterdata/*') ? ' active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
@@ -35,6 +36,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
 
                 <li class="sidebar-item{{ request()->is('panel/pengaduan*') ? ' active' : '' }}">
                     <a href="{{ route('pengaduan') }}" class='sidebar-link'>

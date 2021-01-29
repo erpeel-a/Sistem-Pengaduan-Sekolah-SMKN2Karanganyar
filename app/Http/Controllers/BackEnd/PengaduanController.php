@@ -15,7 +15,7 @@ class PengaduanController extends Controller
     {
         $data = [
             'title' => 'Pengaduan',
-            'pengaduan' => Pengaduan::get(),
+            'pengaduan' => Pengaduan::latest()->get(),
         ];
         return view('backend.pages.pengaduan.index', $data);
     }
@@ -30,13 +30,13 @@ class PengaduanController extends Controller
         return view('backend.pages.pengaduan.detail', $data);
     }
 
-    public function update(Request $req, $id)
-    {
-        Pengaduan::where(['id' => $id])->update([
-            'status' => $req->status,
-        ]);
-        return redirect(route('pengaduan'))->with('status', 'Data Pengaduan Berhasil Diubah');
-    }
+    // public function update(Request $req, $id)
+    // {
+    //     Pengaduan::where(['id' => $id])->update([
+    //         'status' => $req->status,
+    //     ]);
+    //     return redirect(route('pengaduan'))->with('status', 'Data Pengaduan Berhasil Diubah');
+    // }
 
     public function tanggapan($id)
     {
