@@ -27,16 +27,16 @@
                         <span>Master Data</span>
                     </a>
                     <ul class="submenu{{ request()->is('panel/masterdata/*') ? ' active' : '' }}">
-                        <li class="submenu-item{{ request()->is('panel/masterdata/petugas') ? ' active' : '' }}">
+                        <li class="submenu-item{{ request()->is('panel/masterdata/petugas*') ? ' active' : '' }}">
                             <a href="{{ route('data.petugas') }}">Data Petugas</a>
                         </li>
-                        <li class="submenu-item{{ request()->is('panel/masterdata/users') ? ' active' : '' }}">
+                        <li class="submenu-item{{ request()->is('panel/masterdata/users*') ? ' active' : '' }}">
                             <a href="{{ route('data.users') }}">Data User</a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="sidebar-item{{ request()->is('panel/pengaduan') ? ' active' : '' }}">
+                <li class="sidebar-item{{ request()->is('panel/pengaduan*') ? ' active' : '' }}">
                     <a href="{{ route('pengaduan') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Pengaduan</span>
