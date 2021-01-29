@@ -19,6 +19,6 @@ class rolecheck
         if(in_array($request->user()->role,$roles)){
             return $next($request);
         }
-        return redirect('/panel');
+        return redirect()->route('dashboard');
     }
 }

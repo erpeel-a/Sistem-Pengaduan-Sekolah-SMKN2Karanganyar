@@ -26,7 +26,7 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'prosesLogin'])->name('proses.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('proses.logout');
 
-Route::group(['middleware' => ['auth', 'rolecheck:admin, petugas']], function () {
+Route::group(['middleware' => ['auth', 'rolecheck:admin,petugas']], function () {
     Route::group(['prefix' => '/panel'], function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         //pengaduan

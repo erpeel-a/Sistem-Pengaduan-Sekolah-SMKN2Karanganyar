@@ -17,7 +17,15 @@ class AuthController extends Controller
     {
         // dd($req->all());
         if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
-            if(Auth::user()->role === 'user' ) { return redirect('/');   }return redirect(route('dashboard'));
+            if(Auth::user()->role === 'user' ) {
+               return redirect('/');   
+            }
+            if (Auth::user()->role === 'admin'){
+                return redirect(route('dashboard'));
+            }
+            if( Auth::user()->role === 'petugas' ){
+                return redirect(route('dashboard'));
+            }
         } else {
             return redirect()->back()->with('error', 'Email atau Password Yang Anda Masukan Salah');
         }
