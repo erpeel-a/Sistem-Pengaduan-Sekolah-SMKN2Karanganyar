@@ -14,15 +14,15 @@
           <div class="flex justify-center items-center mx-auto mt-6 mb-8">
             <img src="{{asset('assets/success-illustration.svg')}}" alt="" class="w-full" />
           </div>
-          <h2 class="font-semibold mb-3 text-3xl text-center">Tanggapan Anda Berhasil dikirim</h2>
-          <p class="text-center font-light">
+          <h2 class="font-semibold mb-3 text-gray-600 text-3xl text-center">Tanggapan Anda Berhasil dikirim</h2>
+          <p class="text-center text-gray-500 font-light">
            Silahkan tunggu konfirmasi dari kami   
             <br />
             melalui email yang anda daftarkan
           </p>
           <div class="mb-4 mt-6">
             <div class="mb-3">
-              <a href="{{url('/')}}" class="block text-center w-full bg-blue-600 hover:bg-blue-500 text-white font-medium px-4 py-3 text-lg rounded-full" >
+              <a href="{{url('/')}}" class="block text-center w-full bg-blue-600 hover:bg-blue-500 text-gray-100 font-medium px-4 py-3 text-lg rounded-full" >
                 Kembali Ke Beranda
               </a>
   

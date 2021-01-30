@@ -10,7 +10,7 @@ class Helper
       'status' => 'success',
       'message' => null
     ],
-    'data' => null
+    'result' => null
   ];
 
   public static function success($data = null, $message = null)

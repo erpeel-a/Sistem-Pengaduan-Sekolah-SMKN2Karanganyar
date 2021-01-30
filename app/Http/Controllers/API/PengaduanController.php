@@ -14,14 +14,12 @@ class PengaduanController extends Controller
     public function index($id = false)
     {
         $judul_laporan = request()->judul_laporan;
-        $kode_pengaduan = request()->kode_pengaduan;
-        $limit = 6;
         if($id){
             $data = Pengaduan::findOrfail($id);
         }else if($judul_laporan){
-            $data = Pengaduan::where('judul_laporan', 'like', '%'. $judul_laporan. '%')->paginate(6);
+            $data = Pengaduan::where('judul_laporan', 'like', '%'. $judul_laporan. '%')->paginate($limit);
         }else{
-            $data = Pengaduan::paginate(6);
+            $data = Pengaduan::paginate($limit);
         }
         return Helper::success($data, 'Data Detail Pengaduan Berhasil di ambil');
     

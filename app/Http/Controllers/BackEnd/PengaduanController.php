@@ -8,6 +8,8 @@ use App\Models\Tanggapan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
+use Mail;
+use App\Mail\ConfirmMail;
 
 class PengaduanController extends Controller
 {
@@ -55,7 +57,8 @@ class PengaduanController extends Controller
             'status' => 'required'
         ]);
 
-        Pengaduan::where(['id' => $id])->update([
+        $pengaduan = Pengaduan::findOrfail($id);
+        $pengaduan->update([
             'status' => $req->status,
         ]);
 
@@ -64,6 +67,8 @@ class PengaduanController extends Controller
             'user_id' => Auth::User()->id,
             'tanggapan' => $req->tanggapan
         ]);
+        // send mail to user
+        Mail::to($pengaduan)->send(new ConfirmMail($pengaduan));
         return redirect(route('pengaduan'))->with('status', 'Data Pengaduan Berhasil Ditanggapi');
     }
 }

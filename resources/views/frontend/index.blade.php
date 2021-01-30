@@ -5,18 +5,22 @@
 @section('content')
    <!-- hero section -->
    <section class="py-20 bg-gray-50">
-    <div class="container mt-10 items-center max-w-6xl px-4 px-10 mx-auto sm:px-20 md:px-32 lg:px-16">
+    <div class="container mt-10 items-center max-w-10xl px-4 px-10 mx-auto sm:px-20 md:px-32 lg:px-16">
       <div class="flex flex-wrap items-center -mx-3">
         <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
           <div class="w-full lg:max-w-md">
             <h3
               class="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-4xl  lg:text-left md:text-center font-heading">
               Selamat Datang di
-              Sistem Layanan Pengaduan & Aspirasi <br> SMKN 2 Karanganyar</h2>
+              Sistem Layanan Pengaduan & Aspirasi SMKN 2 Karanganyar</h2>
               <p class="mb-4 font-medium tracking-tight text-gray-400 lg:text-left md:text-center  xl:mb-6">Laporkan
                 kepada kami jika ada
                 Pengaduan atau pun Aspirasi yang dapat menjadi langkah awal untuk kita menjadi lebih baik lagi.</p>
               <div class="relative flex flex-col sm:flex-row sm:space-x-4">
+               <a href="#"
+                  class="flex items-center px-6 py-3  text-md text-gray-500 bg-gray-200 rounded-md hover:bg-gray-200 hover:text-gray-600">
+                  Pelajari Selengkapnya
+                </a>
                 <a href="{{url('site/buat-pengaduan')}}"
                   class="flex items-center w-full  px-6 py-3 mb-3 text-md text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto">
                   Buat Pengaduan
@@ -26,10 +30,6 @@
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
-                </a>
-                <a href="#"
-                  class="flex items-center px-6 py-3  text-md text-gray-500 bg-gray-200 rounded-md hover:bg-gray-200 hover:text-gray-600">
-                  Pelajari Selengkapnya
                 </a>
               </div>
           </div>
@@ -85,7 +85,7 @@
               <path d="M4.5 17l-1.5 5l3 -1.5l3 1.5l-1.5 -5" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Buat Pengaduan</h4>
+          <h4 class="text-xl font-medium text-gray-700">Masuk/Login</h4>
           <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Numquam asperiores iure obcaecati officiis harum corporis </p>
         </div>
@@ -119,7 +119,7 @@
                 d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Buat Pengaduan</h4>
+          <h4 class="text-xl font-medium text-gray-700">Lengkapi Form</h4>
           <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Numquam asperiores iure obcaecati officiis harum corporis .</p>
         </div>
@@ -136,7 +136,7 @@
                 d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Buat Pengaduan</h4>
+          <h4 class="text-xl font-medium text-gray-700">Masukkan Berkas Pendukung (Jika ada)</h4>
           <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Numquam asperiores iure obcaecati officiis harum corporis .</p>
         </div>
@@ -153,7 +153,7 @@
                 d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Buat Pengaduan</h4>
+          <h4 class="text-xl font-medium text-gray-700">Kirim Pengaduan</h4>
           <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Numquam asperiores iure obcaecati officiis harum corporis .</p>
         </div>
@@ -170,7 +170,7 @@
                 d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Buat Pengaduan</h4>
+          <h4 class="text-xl font-medium text-gray-700">Tunggu Konfirmasi</h4>
           <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Numquam asperiores iure obcaecati officiis harum corporis .</p>
         </div>
@@ -217,7 +217,7 @@
       <div
         class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
         <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Apakah pengaduan yang saya berikan akan
-          selalu mendapatkan respon? ?</h3>
+          selalu mendapatkan respon?</h3>
         <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Lorem ipsum dolor sit, amet consectetur
           adipisicing elit. Cumque praesentium, facere consequatur sequi recusandae culpa voluptatum ad ea hic atque
           nemo illum fuga porro? Possimus suscipit officiis explicabo id inventore.</p>
