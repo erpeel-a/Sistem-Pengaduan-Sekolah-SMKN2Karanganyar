@@ -14,6 +14,7 @@ class PengaduanController extends Controller
     public function index($id = false)
     {
         $judul_laporan = request()->judul_laporan;
+        $limit = 6;
         if($id){
             $data = Pengaduan::findOrfail($id);
         }else if($judul_laporan){
