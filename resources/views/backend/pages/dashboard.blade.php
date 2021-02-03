@@ -80,10 +80,23 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Profile Visit</h4>
+                            <h4>Log Activity</h4>
                         </div>
                         <div class="card-body">
-                            <div id="chart-profile-visit"></div>
+                            <table>
+                                <tr>
+                                    <th width="10%">#</th>
+                                    <th width="75%">Activity</th>
+                                    <th width="15%">Time</th>
+                                </tr>
+                                @foreach ($activities as $item)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->activity }}</td>
+                                        <td>{{ $item->created_at->diffForHumans() }}</td>
+                                    </tr>
+                                @endforeach
+                            </table>
                         </div>
                     </div>
                 </div>
