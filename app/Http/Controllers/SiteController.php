@@ -30,7 +30,7 @@ class SiteController extends Controller
             'nomor_induk' => 'required',
             'nama' => 'required',
             'email' => 'required',
-            'no_telp' => 'required|size:12',
+            'no_telp' => 'required|min:11|max:12',
             'alamat' => 'required',
             'jenis_pengaduan' => 'required',
             'tanggal_laporan' => 'required',
