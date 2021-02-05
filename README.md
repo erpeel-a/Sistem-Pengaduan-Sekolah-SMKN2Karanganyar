@@ -1,5 +1,5 @@
 # Introduce
-Pengaduan Sekolah 
+-
 
 ### Installation
 
@@ -125,7 +125,7 @@ http://example.dev/api/v1/tanggapan/pengaduan/2
 
 Contributors
 
--   [Muhamad Zainal Arifin](https://github.com/Zainal21) as Full Stack Developer
+-   [Muhamad Zainal Arifin](https://github.com/Zainal21) as Backend Developer
 -   [Hendra Agil Syaputra](https://github.com/hendraaagil) as Frontend Developer
 -   [Niko Febriyanto](https://github.com/NFebri) as Backend Developer
 
