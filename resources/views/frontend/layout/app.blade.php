@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="#home">
 
 <head>
   <meta charset="UTF-8">
@@ -33,12 +33,12 @@
                   class="flex flex-col items-start justify-center w-full text-center md:w-2/3 md:mt-0 md:flex-row md:items-center">
                   <a href="{{url('/')}}"
                     class="inline-block w-full px-6 py-2 mx-0 font-medium text-left text-indigo-600 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center">Beranda</a>
-                  <a href="#"
+                  <a href="{{url('/'. '#about')}}"
                     class="inline-block w-full px-6 py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-600 lg:mx-3 md:text-center">Tentang</a>
-                  <a href="#"
+                  <a href="{{url('/'. '#flow')}}"
                     class="inline-block w-full px-6 py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-600 lg:mx-3 md:text-center">Alur
                     Pengaduan</a>
-                  <a href="#"
+                  <a href="{{url('/' . '#faq')}}"
                     class="inline-block w-full px-6 py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-600 lg:mx-3 md:text-center">FAQ</a>
                     @auth
                     <a href="{{route('pengaduan.check')}}"
@@ -91,7 +91,7 @@
     <footer class="bg-white">
       <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <p class="mt-8 text-base leading-6 text-center text-gray-400">
-          &copy; 2020 Copyright
+          &copy; <?= date('Y') ?> Copyright
           - Develop by XIIRA Team Dev
         </p>
       </div>

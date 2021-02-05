@@ -42,10 +42,10 @@
   <!-- end hero section -->
 
   <!-- about -->
-  <section class="relative py-16 bg-white min-w-screen animation-fade animation-delay">
+  <section class="relative py-20 bg-white min-w-screen animation-fade animation-delay" id="about">
     <div class="container px-0 px-8 mx-auto sm:px-12 xl:px-5">
       <p
-        class="text-xs font-bold text-left text-pink-500 uppercase sm:mx-6 sm:text-center sm:text-normal sm:font-bold">
+        class="text-xs font-bold md:mt-10 text-left text-pink-500 uppercase sm:mx-6 sm:text-center sm:text-normal sm:font-bold">
         Selayang Pandang</p>
       <h4
         class="mt-1 text-md font-bold text-left text-gray-800 sm:mx-6 sm:text-3xl md:text-md lg:text-mdl sm:text-center sm:mx-0">
@@ -62,10 +62,10 @@
   </section>
   <!-- end about -->
   <!-- Flow content -->
-  <section class="relative py-16 bg-white min-w-screen animation-fade animation-delay">
+  <section class="relative py-16 bg-white min-w-screen animation-fade animation-delay" id="flow">
     <div class="container px-0 px-8 mx-auto sm:px-12 xl:px-5">
       <p
-        class="text-xs font-bold text-left text-pink-500 uppercase sm:mx-6 sm:text-center sm:text-normal sm:font-bold">
+        class="text-xs font-bold  md:mt-20 text-left text-pink-500 uppercase sm:mx-6 sm:text-center sm:text-normal sm:font-bold">
         Alur Pengaduan</p>
       <h4
         class="mt-1 text-md font-bold text-left text-gray-800 sm:mx-6 sm:text-3xl md:text-md lg:text-mdl sm:text-center sm:mx-0">
@@ -180,10 +180,10 @@
   </section>
   <!-- flow content -->
   <!-- FAQ -->
-  <section class="relative py-16 bg-white min-w-screen animation-fade animation-delay">
+  <section class="relative py-16 bg-white min-w-screen animation-fade animation-delay" id="faq">
     <div class="container px-0 px-8 mx-auto sm:px-12 xl:px-5">
       <p
-        class="text-xs font-bold text-left text-pink-500 uppercase sm:mx-6 sm:text-center sm:text-normal sm:font-bold">
+        class="text-xs md:mt-10 font-bold text-left text-pink-500 uppercase sm:mx-6 sm:text-center sm:text-normal sm:font-bold">
         FAQ</p>
       <h4
         class="mt-1 text-md font-bold text-left text-gray-800 sm:mx-6 sm:text-3xl md:text-md lg:text-mdl sm:text-center sm:mx-0">

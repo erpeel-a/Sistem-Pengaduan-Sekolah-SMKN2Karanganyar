@@ -7,6 +7,8 @@ use Auth;
 use App\Models\Pengaduan;
 use App\Models\Tanggapan;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Crypt;
+
 class SiteController extends Controller
 {
     public function index()
@@ -17,6 +19,55 @@ class SiteController extends Controller
     public function create()
     {
         return view('frontend.input-pengaduan');
+    }
+
+    public function edit($id)
+    {
+        return view('frontend.ubah-pengaduan',[
+            'pengaduan' => Pengaduan::findOrfail(Crypt::decrypt($id)),
+            'jenis' => ['pengaduan', 'aspirasi']
+        ]);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $request->validate([
+            'kode_pengaduan' => 'unique',
+            'judul_laporan' => 'required',
+            'nomor_induk' => 'required',
+            'nama' => 'required',
+            'email' => 'required',
+            'no_telp' => 'required|size:12',
+            'alamat'=>'required',
+            'jenis_pengaduan' =>'required',
+            'tanggal_laporan' => 'required',
+            'laporan' => 'required',
+        ]);
+        if($id){
+            $pengaduan = Pengaduan::findOrfail($id);
+            if($request->hasFile('berkas_pendukung')){
+                if(file_exists($pengaduan->berkas_pendukung)){
+                    unlink($pengaduan->berkas_pendukung);
+                }
+                $file = $request->file('berkas_pendukung'); 
+                $berkas = $file->move('uploads/berkas_pendukung/', time(). '-' . Str::limit(Str::slug($request->judul_laporan), 50, '').'-'.strtotime('now').'.'.$file->getClientOriginalExtension());
+            }
+            $data = $pengaduan->update([
+                     'nomor_induk' => $request->nomor_induk,
+                     'judul_laporan' => $request->judul_laporan,
+                     'nama' => $request->nama,
+                     'email' => $request->email,
+                     'no_telp' => $request->no_telp,
+                     'alamat' => $request->alamat,
+                     'jenis_pengaduan' => $request->jenis_pengaduan,
+                     'tanggal_laporan' => $request->tanggal_laporan,
+                     'laporan' => $request->laporan,
+                     'berkas_pendukung' => !empty($berkas) ? $berkas : $pengaduan->berkas_pendukung,
+                ]);
+                return redirect()->route('pengaduan.check')->with('status', 'Data pengaduan berhasil di ubah');
+        }else{
+                return redirect()->route('pengaduan.check')->with('status', 'Data tidak ditemukan');
+        }
     }
     // store
     public function store(Request $request)

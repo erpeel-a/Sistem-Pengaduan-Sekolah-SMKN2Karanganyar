@@ -11,10 +11,10 @@ use Illuminate\Support\Str;
 
 class PengaduanController extends Controller
 {
-    public function index($id = false)
+    public function index($id = false,Request $req)
     {
         $judul_laporan = request()->judul_laporan;
-        $limit = 6;
+        $limit = $req->input('limit', 6);
         if($id){
             $data = Pengaduan::findOrfail($id);
         }else if($judul_laporan){

@@ -19,7 +19,7 @@
               <p class="text-sm sm:text-md md:text-md">Nama Pelapor : <span class="font-semibold  text-cyan-500">{{$groupItem->pengaduan->nama}}</span>
               </p>
               <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">{{$groupItem->pengaduan->laporan}}</p>
-                <a href="{{ asset($groupItem->pengaduan->berkas_pendukung) }}" class="text-blue-400" download="{{$groupItem->pengaduan->berkas_pendukung}}">{{$groupItem->pengaduan->berkas_pendukung}}</i></a>
+                <a href="{{ asset($groupItem->pengaduan->berkas_pendukung) }}" class="text-blue-400" download="{{$groupItem->pengaduan->berkas_pendukung}}">Download Berkas</i></a>
                 @if ($groupItem->pengaduan->status === 'pending')    
                 <div
                     class="bg-yellow-500 font-semibold text-center mt-4 text-white p-2 rounded  leading-none flex items-center">
@@ -41,7 +41,7 @@
                 </h3>
                 <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">{{$groupItem->tanggapan}}</p>
                 <div class="block">
-                  <a href="{{url('/')}}"
+                  <a href="{{url('site/cek-pengaduan')}}"
                   class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md mt-5 lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">kembali</a>
                 </div>
             </div>

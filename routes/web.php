@@ -67,9 +67,11 @@ Route::group(['middleware' => ['auth', 'rolecheck:user']], function () {
         //  pengaduan
         Route::get('/buat-pengaduan', [SiteController::Class, 'create']);
         Route::post('/buat-pengaduan', [SiteController::Class, 'store'])->name('pengaduan.store');
+        Route::get('/pengaduan/{id}/edit', [SiteController::Class, 'edit'])->name('pengaduan.edit');
+        Route::put('/pengaduan/{id}/update', [SiteController::Class, 'update'])->name('pengaduan.update');
         // ceck pengaduan
         Route::post('/cari-pengaduan', [SiteController::Class, 'handleSearch'])->name('pengaduan.search');
         Route::get('/cek-pengaduan', [SiteController::Class, 'handleCheck'])->name('pengaduan.check');
-        Route::get('/pengaduan/{id}', [SiteController::Class, 'handleDetail'])->name('detail.pengaduan');
+        Route::get('{id}/pengaduan', [SiteController::Class, 'handleDetail'])->name('detail.pengaduan');
     });
 });
