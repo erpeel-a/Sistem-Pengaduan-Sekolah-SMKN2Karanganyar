@@ -97,7 +97,7 @@ http://example.dev/api/v1/pengaduan
 
 Example :
 ```bash
-http://example.dev/api/v1/pengaduan/judul_laporan=testjudul
+http://example.dev/api/v1/pengaduan?judul_laporan=testjudul
 ```
 
 #### Tanggapan
