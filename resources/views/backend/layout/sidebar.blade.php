@@ -24,7 +24,7 @@
                 @if (Auth::user()->role ==='admin')
                 <li class="sidebar-item  has-sub{{ request()->is('panel/masterdata/*') ? ' active' : '' }}">
                     <a href="#" class='sidebar-link'>
-                        <i class="bi bi-grid-1x2-fill"></i>
+                        <i class="fas fa-database"></i>
                         <span>Master Data</span>
                     </a>
                     <ul class="submenu{{ request()->is('panel/masterdata/*') ? ' active' : '' }}">
@@ -40,7 +40,7 @@
 
                 <li class="sidebar-item{{ request()->is('panel/pengaduan*') ? ' active' : '' }}">
                     <a href="{{ route('pengaduan') }}" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
+                        <i class="fas fa-file-alt"></i>
                         <span>Pengaduan</span>
                     </a>
                 </li>
