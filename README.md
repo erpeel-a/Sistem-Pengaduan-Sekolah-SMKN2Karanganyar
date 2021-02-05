@@ -18,14 +18,14 @@ $ php artisan serve
 
 ### Prerequiste
 
-  - Node.js - Download and Install Node.js - Simple bash script to manage multi>
-  - Nodemon - Download and Install Nodemon - nodemon is a tool that automatical>
+  - Node.js 
+  - Composer 
 
 ### Credits
 
-  - Laravel  - Download and Install Node.js - Simple bash script to manage multi>
-  - Tailwind - Download and Install Nodemon - nodemon is a tool that automatical>
- - Bootstrap - Download and Install Nodemon - nodemon is a tool that automatical>
+  - Laravel  
+  - Tailwind 
+  - Bootstrap 
 
 ### API Documentation
 
