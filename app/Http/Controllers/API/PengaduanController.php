@@ -93,7 +93,7 @@ class PengaduanController extends Controller
         }
         if ($req->hasFile('berkas_pendukung')) {
             $file = request()->file('berkas_pendukung');
-            $berkas = $file->move('uploads/berkas_pendukung/', time() . '-' . Str::limit(Str::slug(request()->judul_pengaduan), 50, '') . '-' . strtotime('now') . '.' . $file->getClientOriginalExtension());
+            $berkas = $file->move('uploads/berkas_pendukung/', time() . '-' . Str::limit(Str::slug(request()->judul_laporan), 50, '') . '-' . strtotime('now') . '.' . $file->getClientOriginalExtension());
         }
         $data = Pengaduan::create([
             'kode_pengaduan' => 'PGD' . mt_rand(10000, 99999) . mt_rand(100, 999),
