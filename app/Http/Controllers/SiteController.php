@@ -24,13 +24,13 @@ class SiteController extends Controller
 
     public function edit($id)
     {
-        return view('frontend.ubah-pengaduan',[
+        return view('frontend.ubah-pengaduan', [
             'pengaduan' => Pengaduan::findOrfail(Crypt::decrypt($id)),
             'jenis' => ['pengaduan', 'aspirasi']
         ]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'kode_pengaduan' => 'unique',
@@ -38,39 +38,39 @@ class SiteController extends Controller
             'nomor_induk' => 'required',
             'nama' => 'required',
             'email' => 'required',
-            'no_telp' => 'required|min:11|max:12',
-            'alamat'=>'required',
-            'jenis_pengaduan' =>'required',
+            'no_telp' => 'required|min:11|max:13',
+            'alamat' => 'required',
+            'jenis_pengaduan' => 'required',
             'tanggal_laporan' => 'required',
             'laporan' => 'required',
         ]);
-        if($id){
+        if ($id) {
             $pengaduan = Pengaduan::findOrfail($id);
-            if($request->hasFile('berkas_pendukung')){
-                if(file_exists($pengaduan->berkas_pendukung)){
+            if ($request->hasFile('berkas_pendukung')) {
+                if (file_exists($pengaduan->berkas_pendukung)) {
                     unlink($pengaduan->berkas_pendukung);
                 }
-                $file = $request->file('berkas_pendukung'); 
-                $berkas = $file->move('uploads/berkas_pendukung/', time(). '-' . Str::limit(Str::slug($request->judul_laporan), 50, '').'-'.strtotime('now').'.'.$file->getClientOriginalExtension());
+                $file = $request->file('berkas_pendukung');
+                $berkas = $file->move('uploads/berkas_pendukung/', time() . '-' . Str::limit(Str::slug($request->judul_laporan), 50, '') . '-' . strtotime('now') . '.' . $file->getClientOriginalExtension());
             }
             $data = $pengaduan->update([
-                     'nomor_induk' => $request->nomor_induk,
-                     'judul_laporan' => $request->judul_laporan,
-                     'nama' => $request->nama,
-                     'email' => $request->email,
-                     'no_telp' => $request->no_telp,
-                     'alamat' => $request->alamat,
-                     'jenis_pengaduan' => $request->jenis_pengaduan,
-                     'tanggal_laporan' => $request->tanggal_laporan,
-                     'laporan' => $request->laporan,
-                     'berkas_pendukung' => !empty($berkas) ? $berkas : $pengaduan->berkas_pendukung,
-                ]);
-                Activity::create([
-                    'activity' => Auth::user()->name . ' mengubah Data Pengaduan' . $pengaduan->kode_pengaduan ,
-                ]);
-                return redirect()->route('pengaduan.check')->with('status', 'Data pengaduan berhasil di ubah');
-        }else{
-                return redirect()->route('pengaduan.check')->with('status', 'Data tidak ditemukan');
+                'nomor_induk' => $request->nomor_induk,
+                'judul_laporan' => $request->judul_laporan,
+                'nama' => $request->nama,
+                'email' => $request->email,
+                'no_telp' => $request->no_telp,
+                'alamat' => $request->alamat,
+                'jenis_pengaduan' => $request->jenis_pengaduan,
+                'tanggal_laporan' => $request->tanggal_laporan,
+                'laporan' => $request->laporan,
+                'berkas_pendukung' => !empty($berkas) ? $berkas : $pengaduan->berkas_pendukung,
+            ]);
+            Activity::create([
+                'activity' => Auth::user()->name . ' mengubah Data Pengaduan' . $pengaduan->kode_pengaduan,
+            ]);
+            return redirect()->route('pengaduan.check')->with('status', 'Data pengaduan berhasil di ubah');
+        } else {
+            return redirect()->route('pengaduan.check')->with('status', 'Data tidak ditemukan');
         }
     }
     // store
@@ -83,7 +83,7 @@ class SiteController extends Controller
             'nomor_induk' => 'required',
             'nama' => 'required',
             'email' => 'required',
-            'no_telp' => 'required|min:11|max:12',
+            'no_telp' => 'required|min:11|max:13',
             'alamat' => 'required',
             'jenis_pengaduan' => 'required',
             'tanggal_laporan' => 'required',
