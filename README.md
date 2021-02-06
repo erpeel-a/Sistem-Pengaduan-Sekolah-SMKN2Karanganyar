@@ -90,6 +90,14 @@ Example :
 http://example.dev/api/v1/pengaduan
 ```
 
+| ENDPOINT                      | Method | Description                                  | Data                                                                                             |
+| ------------------------- | ------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| /api/v1/pengaduan/{pengaduan_id}         | PUT   | used for update _pengaduan_       | Body Request :  nomor_induk : _integer_, judul_laporan : _string_, email  : _string_, no_telp : _integer_, alamat : _string_ , jenis_pengaduan : _string_ ['aduan', 'aspirasi'] , tanggal_laporan : _string or Date_, laporan : _string or text_, berkas_pendukung : _file_ , __Header  Authorization token : _string___,                        |
+
+Example :
+```bash
+http://example.dev/api/v1/pengaduan/2
+```
 
 | ENDPOINT                      | Method | Description                                  | Data                                                                                             |
 | ------------------------- | ------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -125,8 +133,8 @@ http://example.dev/api/v1/tanggapan/pengaduan/2
 
 Contributors
 
--   [Muhamad Zainal Arifin](https://github.com/Zainal21) as Backend Developer
 -   [Hendra Agil Syaputra](https://github.com/hendraaagil) as Frontend Developer
+-   [Muhamad Zainal Arifin](https://github.com/Zainal21) as Backend Developer
 -   [Niko Febriyanto](https://github.com/NFebri) as Backend Developer
 
 2021 © XII RPL A SMKN 2 Karanganyar.

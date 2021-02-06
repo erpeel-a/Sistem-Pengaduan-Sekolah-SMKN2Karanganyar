@@ -9,20 +9,19 @@
       <div class="flex flex-wrap items-center -mx-3">
         <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
           <div class="w-full lg:max-w-md">
-            <h3
-              class="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-4xl  lg:text-left md:text-center font-heading">
-              Selamat Datang di
-              Sistem Layanan Pengaduan & Aspirasi SMKN 2 Karanganyar</h2>
+            <h2
+              class="mb-4 text-2xl  font-bold leading-tight tracking-tight   lg:text-left md:text-center font-heading">
+              Selamat Datang di Sistem Layanan Pengaduan & Aspirasi SMKN 2 Karanganyar</h2>
               <p class="mb-4 font-medium tracking-tight text-gray-400 lg:text-left md:text-center  xl:mb-6">Laporkan
                 kepada kami jika ada
                 Pengaduan atau pun Aspirasi yang dapat menjadi langkah awal untuk kita menjadi lebih baik lagi.</p>
-              <div class="relative flex flex-col sm:flex-row sm:space-x-4">
+              <div class="relative flex flex-col sm:flex-row  sm:space-x-4">
                <a href="#"
-                  class="flex items-center px-6 py-3  text-md text-gray-500 bg-gray-200 rounded-md hover:bg-gray-200 hover:text-gray-600">
+                  class="flex items-center px-6 py-3  text-md mt-2 text-gray-500 bg-gray-200 rounded-md hover:bg-gray-200 hover:text-gray-600">
                   Pelajari Selengkapnya
                 </a>
                 <a href="{{url('site/buat-pengaduan')}}"
-                  class="flex items-center w-full  px-6 py-3 mb-3 text-md text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto">
+                  class="flex items-center w-full  px-6 py-3 mt-2 mb-3 text-md text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto">
                   Buat Pengaduan
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -212,7 +211,7 @@
           disampaikan diberikan kepada pelapor?
         </h3>
         <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Quasi, ea. Autem reiciendis fugit neque dolore error commodi obcaecati optio! Porro./p>
+          adipisicing elit. Quasi, ea. Autem reiciendis fugit neque dolore error commodi obcaecati optio! Porro. </p>
       </div>
       <div
         class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\PengaduanRequest;
 use App\Models\Pengaduan;
+use App\Models\Activity;
 use Validator;
 use Illuminate\Support\Str;
 
@@ -22,9 +23,57 @@ class PengaduanController extends Controller
         }else{
             $data = Pengaduan::paginate($limit);
         }
-        return Helper::success($data, 'Data Detail Pengaduan Berhasil di ambil');
+        return Helper::success($data, 'Data Pengaduan Berhasil di ambil');
     
     }
+
+    public function update(Request $request,$id)
+    {
+        $is_valid = Validator::make($req->all(), [
+            'kode_pengaduan' => 'unique',
+            'judul_laporan' => 'required',
+            'nomor_induk' => 'required',
+            'nama' => 'required',
+            'email' => 'required',
+            'no_telp' => 'required|min:11|max:12',
+            'alamat'=>'required',
+            'jenis_pengaduan' =>'required',
+            'tanggal_laporan' => 'required',
+            'laporan' => 'required',
+        ]);
+        if($is_valid->fails()){
+            return Helper::error($is_valid->errors(),'Kesalahan input data', 400);
+        }
+        if($id){
+            $pengaduan = Pengaduan::findOrfail($id);
+            if($request->hasFile('berkas_pendukung')){
+                if(file_exists($pengaduan->berkas_pendukung)){
+                    unlink($pengaduan->berkas_pendukung);
+                }
+                $file = $request->file('berkas_pendukung'); 
+                $berkas = $file->move('uploads/berkas_pendukung/', time(). '-' . Str::limit(Str::slug($request->judul_laporan), 50, '').'-'.strtotime('now').'.'.$file->getClientOriginalExtension());
+            }
+            $data = $pengaduan->update([
+                     'nomor_induk' => $request->nomor_induk,
+                     'judul_laporan' => $request->judul_laporan,
+                     'nama' => $request->nama,
+                     'email' => $request->email,
+                     'no_telp' => $request->no_telp,
+                     'alamat' => $request->alamat,
+                     'jenis_pengaduan' => $request->jenis_pengaduan,
+                     'tanggal_laporan' => $request->tanggal_laporan,
+                     'laporan' => $request->laporan,
+                     'berkas_pendukung' => !empty($berkas) ? $berkas : $pengaduan->berkas_pendukung,
+                ]);
+                Activity::create([
+                    'activity' => Auth::user()->name . ' mengubah Data Pengaduan' . $pengaduan->kode_pengaduan ,
+                ]);
+                return Helper::success($data,'Data pengaduan berhasil diubah');
+        }else{
+            return Helper::error(null,'Data tidak ditemukan', 404);
+        }
+    }
+
     public function store(Request $req)
     {
         $is_valid = Validator::make($req->all(), [
@@ -33,7 +82,7 @@ class PengaduanController extends Controller
             'nomor_induk' => 'required',
             'nama' => 'required',
             'email' => 'required',
-            'no_telp' => 'required|size:12',
+            'no_telp' => 'required|min:11|max:12',
             'alamat'=>'required',
             'jenis_pengaduan' =>'required',
             'tanggal_laporan' => 'required',
@@ -59,6 +108,9 @@ class PengaduanController extends Controller
              'laporan' => request()->laporan,
              'berkas_pendukung' => !empty($berkas) ? $berkas : '',
              'status' => 'pending',
+        ]);
+        Activity::create([
+            'activity' => Auth::user()->name . ' mengirim ' . $request->jenis_pengaduan,
         ]);
         return Helper::success($data, 'Data Pengaduan berhasil di buat');
     }

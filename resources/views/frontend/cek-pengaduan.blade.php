@@ -38,17 +38,24 @@
                                 class="w-full px-3 py-4  font-medium text-white bg-blue-600 rounded-lg">Cari</button>
                         </div>
                     </form>
-                    <!-- card report -->
                     @forelse ($pengaduan as $item)
-                    <div
-                        class="w-full px-6  py-6 mx-auto mt-10 shadow-2xl bg-white border border-gray-200 rounded-xl sm:px-8 md:px-12 sm:py-8 sm:shadow-2xl lg:w-5/6 xl:w-2/3">
-                        <h3 class="text-lg font-bold text-blue-500 sm:text-xl md:text-2xl">{{$item->judul_laporan}}
-                        </h3>
-                        <p class="text-sm font-semibold  text-cyan-500 sm:text-md md:text-md">Nama Pelapor :
+                    <div class="max-w-2xl mt-5 mx-auto px-8 py-4 bg-white  rounded-lg shadow-lg">
+                        <div class="flex justify-between items-center">
+                            <span
+                                class="font-light text-gray-600 text-gray-400 text-sm">{{$item->created_at->format('d/m/Y')}}</span>
+                            <p class="px-3 py-1 bg-gray-600 text-gray-100 text-sm font-bold rounded hover:bg-gray-500">
+                                {{$item->jenis_pengaduan}}</p>
+                        </div>
+                        <p class="text-sm font-medium  text-cyan-100 sm:text-md md:text-md">Nama Pelapor :
                             {{$item->nama}}
                         </p>
-                        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
-                            {{\Str::limit($item->laporan, 20)}}</p>
+                        <div class="mt-2">
+                            <p
+                                class="text-2xl text-gray-700  font-bold hover:text-gray-600 dark:hover:text-gray-200 ">
+                                {{$item->judul_laporan}}</p>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">{{\Str::limit($item->laporan, 20)}}
+                            </p>
+                        </div>
                         @if ($item->status === 'pending')
                         <div
                             class="bg-yellow-500 font-semibold text-center mt-4 text-white p-2 rounded  leading-none flex items-center">
@@ -67,6 +74,7 @@
                         @endif
 
                         <div class="flex">
+                            @auth
                             @if ($item->status === 'sukses' || $item->status === 'ditolak')
                             <div class="block">
                                 <a href="{{route('detail.pengaduan', Crypt::Encrypt($item->id))}}"
@@ -75,16 +83,17 @@
                             @endif
 
                             @if ($item->nama === auth()->user()->name)
-                                @if ($item->status === 'pending')
-                                <div class="flex">
-                                    <a href="{{route('pengaduan.edit', Crypt::Encrypt($item->id))}}"
-                                        class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md mt-5 lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Ubah</a>
-                                </div>
-                                @endif
+                            @if ($item->status === 'pending')
+                            <div class="flex">
+                                <a href="{{route('pengaduan.edit', Crypt::Encrypt($item->id))}}"
+                                    class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md mt-5 lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Ubah</a>
+                            </div>
                             @endif
+                            @endif
+                            @endauth
+
                         </div>
                     </div>
-
                     @empty
                     <div class="container mx-auto">
                         <div class="w-full bg-red-500 rounded-md mt-8 text-white">
@@ -102,11 +111,11 @@
                         </div>
                     </div>
                     @endforelse
+
                     <div class="my-3">
                         {{ $pengaduan->links() }}
                     </div>
 
-                    <!-- card report -->
                 </div>
             </div>
 </section>

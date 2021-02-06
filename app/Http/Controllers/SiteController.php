@@ -38,7 +38,7 @@ class SiteController extends Controller
             'nomor_induk' => 'required',
             'nama' => 'required',
             'email' => 'required',
-            'no_telp' => 'required|size:12',
+            'no_telp' => 'required|min:11|max:12',
             'alamat'=>'required',
             'jenis_pengaduan' =>'required',
             'tanggal_laporan' => 'required',
@@ -64,6 +64,9 @@ class SiteController extends Controller
                      'tanggal_laporan' => $request->tanggal_laporan,
                      'laporan' => $request->laporan,
                      'berkas_pendukung' => !empty($berkas) ? $berkas : $pengaduan->berkas_pendukung,
+                ]);
+                Activity::create([
+                    'activity' => Auth::user()->name . ' mengubah Data Pengaduan' . $pengaduan->kode_pengaduan ,
                 ]);
                 return redirect()->route('pengaduan.check')->with('status', 'Data pengaduan berhasil di ubah');
         }else{
