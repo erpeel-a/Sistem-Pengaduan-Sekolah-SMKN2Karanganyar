@@ -37,5 +37,13 @@ class UserSeeder extends Seeder
             'role' => 'user',
             'nomor_induk' => 002211211
         ]);
+
+        User::create([
+            'name' => 'Zainal',
+            'email' => 'Zainalarifin080718@gmail.com',
+            'password' => bcrypt('zaindev'),
+            'role' => 'user',
+            'nomor_induk' => 002211212
+        ]);
     }
 }
