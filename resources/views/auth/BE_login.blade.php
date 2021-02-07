@@ -14,7 +14,7 @@
             </div>
             <div class="w-full mt-10 md:mt-0 md:w-2/5">
                 <div
-                    class="relative z-10 h-auto p-8 py-2 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
+                    class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
                     <h3 class="mb-6 text-2xl font-medium text-center">Login Pengaduan <br> <strong>SMKN 2
                             Karanganyar</strong>
                     </h3>
