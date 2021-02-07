@@ -29,7 +29,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => '/v1'], function(){
         Route::post('/login', [AuthController::class, 'login']);
         Route::post('/refresh',  [AuthController::class, 'refresh']);
-        Route::put('/pengaduan/{id}', [PengaduanController::class, 'update']); // update pengaduan (jika pengaduan belum di konfirmasi)
+        // Route::put('/pengaduan/{id}', [PengaduanController::class, 'update']); // update pengaduan (jika pengaduan belum di konfirmasi)
 
     Route::group(['middleware' => 'jwt.verify', 'rolecheck:user'], function(){
             // pengaduan
