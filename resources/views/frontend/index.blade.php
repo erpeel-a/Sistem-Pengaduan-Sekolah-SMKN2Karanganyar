@@ -135,7 +135,7 @@
                 d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Masukkan Berkas Pendukung (Jika ada)</h4>
+          <h4 class="text-xl text-center font-medium text-gray-700">Masukkan Berkas Pendukung (Jika ada)</h4>
           <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Numquam asperiores iure obcaecati officiis harum corporis .</p>
         </div>

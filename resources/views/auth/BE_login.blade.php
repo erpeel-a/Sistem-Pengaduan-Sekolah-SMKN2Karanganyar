@@ -1,7 +1,7 @@
 @extends('frontend.layout.app')
 @section('title', 'Login | Layanan Pengaduan SMKN 2 Karanganyar')
 @section('content')
-<section class="w-full h-screen px-8 py-20 bg-gray-100 xl:px-8">
+<section class="w-full h-screen px-8  py-20 bg-gray-100 xl:px-8">
     <div class="max-w-5xl mt-20  mx-auto">
         <div class="flex flex-col items-center md:flex-row">
             <div class="w-full space-y-5 md:w-3/5 md:pr-16">
@@ -12,10 +12,9 @@
                 <p class="text-md text-gray-600 text-center md:text-left md:pr-16">Laporkan kepada kami jika ada
                     Pengaduan atau pun Aspirasi yang dapat menjadi langkah awal untuk kita menjadi lebih baik lagi</p>
             </div>
-
-            <div class="w-full mt-16 md:mt-0 md:w-2/5">
+            <div class="w-full mt-10 md:mt-0 md:w-2/5">
                 <div
-                    class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
+                    class="relative z-10 h-auto p-8 py-2 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
                     <h3 class="mb-6 text-2xl font-medium text-center">Login Pengaduan <br> <strong>SMKN 2
                             Karanganyar</strong>
                     </h3>
@@ -66,7 +65,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
