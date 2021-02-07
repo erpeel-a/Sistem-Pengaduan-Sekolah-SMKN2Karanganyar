@@ -66,7 +66,7 @@ class PengaduanController extends Controller
                 'berkas_pendukung' => !empty($berkas) ? $berkas : $pengaduan->berkas_pendukung,
             ]);
             Activity::create([
-                'activity' => Auth::user()->name . ' mengubah Data Pengaduan' . $pengaduan->kode_pengaduan,
+                'activity' => Auth::user()->name . ' mengubah Data Pengaduan ' . $pengaduan->kode_pengaduan,
             ]);
             return Helper::success($data, 'Data pengaduan berhasil diubah');
         } else {
