@@ -44,7 +44,7 @@
                             <span
                                 class="font-light text-gray-600 text-gray-400 text-sm">{{$item->created_at->format('d/m/Y')}}</span>
                             <p class="px-3 py-1 bg-gray-600 text-gray-100 text-sm font-bold rounded hover:bg-gray-500">
-                                {{$item->jenis_pengaduan}}</p>
+                                 {{strip_tags($item->jenis_pengaduan)}}</p>
                         </div>
                         <p class="text-sm font-medium  text-cyan-100 sm:text-md md:text-md">Nama Pelapor :
                             {{$item->nama}}
@@ -52,7 +52,9 @@
                         <div class="mt-2">
                             <p
                                 class="text-2xl text-gray-700  font-bold hover:text-gray-600 dark:hover:text-gray-200 ">
-                                {{$item->judul_laporan}}</p>
+                                @php
+                                    echo(strip_tags($item->judul_laporan))
+                                @endphp</p>
                             <p class="mt-2 text-gray-600 dark:text-gray-300">{{\Str::limit($item->laporan, 20)}}
                             </p>
                         </div>

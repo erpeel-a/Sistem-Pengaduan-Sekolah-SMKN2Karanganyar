@@ -53,8 +53,7 @@
       <div
         class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
         <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Untuk Apa sistem ini di buat?</h3>
-        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Sapiente, tempora iure culpa eum sed, minus consequuntur nobis ex voluptate quis maxime.
+        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">ini dibuat untuk menampung pengaduan & aspirasi dari semua warga SMKN 2 Karanganyar. Diharapkan dengan sistem ini semua warga sekolah dapat lebih mudah untuk melaporkan pengaduan & aspirasi untuk sekolah.
         </p>
       </div>
     </div>
@@ -84,9 +83,8 @@
               <path d="M4.5 17l-1.5 5l3 -1.5l3 1.5l-1.5 -5" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Masuk/Login</h4>
-          <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Numquam asperiores iure obcaecati officiis harum corporis </p>
+          <h4 class="text-xl font-medium text-gray-700">1. Masuk/Login</h4>
+          <p class="text-base text-center text-gray-500">Masuk ke sistem ini dengan email dan password yang sudah terdaftar. </p>
         </div>
 
         <div
@@ -101,9 +99,8 @@
                 d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Buat Pengaduan</h4>
-          <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Numquam asperiores iure obcaecati officiis harum corporis .</p>
+          <h4 class="text-xl font-medium text-gray-700">2. Buat Pengaduan</h4>
+          <p class="text-base text-center text-gray-500">Klik tombol "Buat Pengaduan" yang tersedia di halaman ini.</p>
         </div>
 
         <div
@@ -118,9 +115,8 @@
                 d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
             </svg>
           </div>
-          <h4 class="text-xl font-medium text-gray-700">Lengkapi Form</h4>
-          <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Numquam asperiores iure obcaecati officiis harum corporis .</p>
+          <h4 class="text-xl font-medium text-gray-700">3. Lengkapi Form </h4>
+          <p class="text-base text-center text-gray-500">Isi semua form sesuai tempat yang sudah disediakan dengan data yang benar.</p>
         </div>
 
         <div
@@ -135,9 +131,8 @@
                 d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
             </svg>
           </div>
-          <h4 class="text-xl text-center font-medium text-gray-700">Masukkan Berkas Pendukung (Jika ada)</h4>
-          <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Numquam asperiores iure obcaecati officiis harum corporis .</p>
+          <h4 class="text-xl text-center font-medium text-gray-700">4. Tambahkan Berkas Pendukung (Jika Ada)</h4>
+          <p class="text-base text-center text-gray-500">Tambahkan berkas pendukung jika perlu, agar laporan bisa lebih jelas dan mudah dipahami.</p>
         </div>
 
         <div
@@ -153,8 +148,7 @@
             </svg>
           </div>
           <h4 class="text-xl font-medium text-gray-700">Kirim Pengaduan</h4>
-          <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Numquam asperiores iure obcaecati officiis harum corporis .</p>
+          <p class="text-base text-center text-gray-500">Kirim pengaduan agar nantinya bisa dicek oleh petugas dari sekolah.</p>
         </div>
 
         <div
@@ -170,8 +164,7 @@
             </svg>
           </div>
           <h4 class="text-xl font-medium text-gray-700">Tunggu Konfirmasi</h4>
-          <p class="text-base text-center text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Numquam asperiores iure obcaecati officiis harum corporis .</p>
+          <p class="text-base text-center text-gray-500">Jika laporan sudah diterima dan ditanggapi, pemberitahuan akan dikirimkan melalui email yang digunakan.</p>
         </div>
 
       </div>
@@ -179,7 +172,7 @@
   </section>
   <!-- flow content -->
   <!-- FAQ -->
-  <section class="relative py-16 bg-white min-w-screen animation-fade animation-delay" id="faq">
+  <section class="relative py-16 bg-gray-100 min-w-screen animation-fade animation-delay" id="faq">
     <div class="container px-0 px-8 mx-auto sm:px-12 xl:px-5">
       <p
         class="text-xs md:mt-10 font-bold text-left text-pink-500 uppercase sm:mx-6 sm:text-center sm:text-normal sm:font-bold">
@@ -192,34 +185,37 @@
         class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
         <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Apakah Aplikasi Pengaduan SMKN 2
           Karanganyar ini ?</h3>
-        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Lorem ipsum dolor, sit amet consectetur
-          adipisicing elit. Dolores nesciunt optio fuga illo, deleniti inventore consectetur necessitatibus dicta. Id,
-          ipsam?.</p>
+        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Seperti yang sudah dijelaskan diatas tadi, aplikasi ini dibuat untuk menampung pengaduan & aspirasi dari semua warga SMKN2 Karanganyar.</p>
       </div>
       <div
         class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
         <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Apakah bentuk respon yang diberikan
           kepada
           pelapor atas pengaduan yang disampaikan?</h3>
-        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Id aspernatur distinctio placeat exercitationem autem illum aliquid quas quam enim sit!
-        </p>
+        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Respon akan diberikan dalam bentuk tanggapan dan konfirmasi dari petugas apakan laporan akan diterima atau ditolak.</p>
       </div>
+      <div
+      class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
+      <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Apakah saya bisa mengubah laporan yang sudah saya kirimkan ?</h3>
+      <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Tentu. Laporan dapat kamu ubah jika belum direspon atau masih dalam status "pending".</p>
+    </div>
       <div
         class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
         <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Berapa lama respon atas pengaduan yang
           disampaikan diberikan kepada pelapor?
         </h3>
-        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Quasi, ea. Autem reiciendis fugit neque dolore error commodi obcaecati optio! Porro. </p>
+        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Kecepatan respon tergantung pada banyaknya orang yang mengirim laporan. Tapi, jangan khawatir jika sudah direspon maka pemberitahuan akan kami kirimkan ke email kamu.</p>
       </div>
       <div
         class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
         <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Apakah pengaduan yang saya berikan akan
           selalu mendapatkan respon?</h3>
-        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Cumque praesentium, facere consequatur sequi recusandae culpa voluptatum ad ea hic atque
-          nemo illum fuga porro? Possimus suscipit officiis explicabo id inventore.</p>
+        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Tentu saja. Pasti akan selalu mendapatkan respon.</p>
+      </div>
+      <div
+        class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
+        <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">Bagaimana jika saya belum paham tentang sistem ini dan ingin bertanya lebih lanjut ?</h3>
+        <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">Kamu bisa kirim pertanyaan ke email kami : rpla.smkn2kra@gmail.com</p>
       </div>
     </div>
   </section>

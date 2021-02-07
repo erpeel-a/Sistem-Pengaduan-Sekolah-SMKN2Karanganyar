@@ -100,7 +100,7 @@
                        @enderror
                         <label for="" class="text-gray-600">Berkas / File Pendukung</label>
                         <div class="block mb-4  border border-gray-200 rounded-lg">
-                            <input type="file" name="berkas_pendukung" id="Nama"
+                            <input type="file" accept=".xls,.xlsx,.doc,.docx" name="berkas_pendukung" id="Nama"
                                 class="block w-full px-4 py-3 border-2 border-transparent rounded-lg focus:border-blue-500 focus:outline-none">
                         </div>
                         <div class="block">
