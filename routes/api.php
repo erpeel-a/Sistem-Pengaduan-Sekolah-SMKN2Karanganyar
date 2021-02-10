@@ -26,21 +26,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     API using JWT for Authorization
 */
 // Login 
-Route::group(['prefix' => '/v1'], function(){
-        Route::post('/login', [AuthController::class, 'login']);
-        Route::post('/refresh',  [AuthController::class, 'refresh']);
-        
-        Route::group(['middleware' => 'jwt.verify', 'rolecheck:user'], function(){
-            // pengaduan
-            Route::put('/pengaduan/{id}', [PengaduanController::class, 'update']); // update pengaduan (jika pengaduan belum di konfirmasi)
-            Route::get('/pengaduan', [PengaduanController::class, 'index']); // search and show all pengaduan
-            Route::get('/pengaduan/{id}', [PengaduanController::class, 'index']); // show detail pengaduan
-            Route::post('/pengaduan', [PengaduanController::class, 'store']); // store pengaduan
-            // tanggapan
+Route::group(['prefix' => '/v1'], function () {
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/refresh',  [AuthController::class, 'refresh']);
+
+    Route::group(['middleware' => 'jwt.verify', 'rolecheck:user'], function () {
+        // pengaduan
+        Route::put('/pengaduan/{id}', [PengaduanController::class, 'update']); // update pengaduan (jika pengaduan belum di konfirmasi)
+        Route::get('/pengaduan', [PengaduanController::class, 'index']); // search and show all pengaduan
+        Route::get('/pengaduan/{id}', [PengaduanController::class, 'index']); // show detail pengaduan
+        Route::post('/pengaduan', [PengaduanController::class, 'store']); // store pengaduan
+        Route::delete('/pengaduan/{id}/delete', [PengaduanController::class, 'destroy']); // delete pengaduan
+        // tanggapan
         Route::get('/tanggapan', [TanggapanController::class, 'index']); // all tanggapan
         Route::get('/tanggapan/pengaduan/{id}', [TanggapanController::class, 'index']); //spesific tanggapan
         // logout
-        Route::post('/logout', [AuthController::class, 'logout']);  
-
+        Route::post('/logout', [AuthController::class, 'logout']);
     });
 });

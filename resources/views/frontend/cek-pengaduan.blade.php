@@ -88,6 +88,11 @@
                                     <div class="flex">
                                         <a href="{{route('pengaduan.edit', Crypt::Encrypt($item->id))}}"
                                             class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md mt-5 lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Ubah</a>
+                                        <form action="{{ Route('pengaduan.delete', $item->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-red-600 border border-transparent md:px-3 md:w-auto md:rounded-md mt-5 lg:px-5 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700 ml-2">Hapus</button>
+                                        </form>
                                     </div>
                                     @endif
                                 @endif

@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BackEnd\{
-    DashboardController,DataPetugasController,
-    DataUserController,PengaduanController,
+    DashboardController,
+    DataPetugasController,
+    DataUserController,
+    PengaduanController,
     TanggapanController
 };
 
@@ -25,7 +27,7 @@ Route::get('/', [SiteController::Class, 'index']);
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'prosesLogin'])->name('proses.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('proses.logout');
-Route::group(['prefix' => 'site'], function(){
+Route::group(['prefix' => 'site'], function () {
     Route::post('/cari-pengaduan', [SiteController::Class, 'handleSearch'])->name('pengaduan.search');
     Route::get('/cek-pengaduan', [SiteController::Class, 'handleCheck'])->name('pengaduan.check');
 });
@@ -73,6 +75,7 @@ Route::group(['middleware' => ['auth', 'rolecheck:user']], function () {
         Route::post('/buat-pengaduan', [SiteController::Class, 'store'])->name('pengaduan.store');
         Route::get('/pengaduan/{id}/edit', [SiteController::Class, 'edit'])->name('pengaduan.edit');
         Route::put('/pengaduan/{id}/update', [SiteController::Class, 'update'])->name('pengaduan.update');
+        Route::delete('/pengaduan/{id}/delete', [SiteController::Class, 'destroy'])->name('pengaduan.delete');
         // ceck pengaduan
         Route::get('{id}/pengaduan', [SiteController::Class, 'handleDetail'])->name('detail.pengaduan');
     });

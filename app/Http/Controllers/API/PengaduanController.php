@@ -114,4 +114,15 @@ class PengaduanController extends Controller
         ]);
         return Helper::success($data, 'Data Pengaduan berhasil di buat');
     }
+
+    public function destroy($id)
+    {
+        Pengaduan::destroy($id);
+        Activity::create([
+            'activity' => Auth::user()->name . ' menghapus pengaduan/aspirasi',
+        ]);
+        return response()->json([
+            'message' => 'pengaduan berhasil dihapus',
+        ], 200);
+    }
 }

@@ -138,4 +138,13 @@ class SiteController extends Controller
     {
         return view('frontend.sukses');
     }
+
+    public function destroy($id)
+    {
+        Pengaduan::destroy($id);
+        Activity::create([
+            'activity' => Auth::user()->name . ' menghapus pengaduan/aspirasi',
+        ]);
+        return redirect()->route('pengaduan.check')->with('status', 'Data pengaduan berhasil dihapus');
+    }
 }
