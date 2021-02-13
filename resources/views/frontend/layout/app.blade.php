@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="sistem pengaduan SMKN 2 Karanganyar adalah sistem yang digununakan untuk menyampaikan aspirasi atau pengaduan kepada pihak sekolah secara online">
+    <meta author="Hendra Agil, Muhamad Zainal A, Niko Febriyanto">
     <title>@yield('title')</title>
+    <meta name="subject" content="Website Layanan Pengaduan SMK Negeri 2 Karanganyar">
+    <meta name="google-site-verification" content="eA5vWNqCfogT0bO_jGCuJrUwkt1bzfvbYUGlRguZWY" />
+    <meta name="language" content="Indonesia">
+    <meta name="robots" content="index,follow" />
+    <meta name="Classification" content="Layanan">
+    <meta name="author" content="Muhamad Zainal Arifin,Hendra Agil S,Niko Febriyanto">
+    <meta name="designer" content="Muhamad Zainal arifin">
+    <meta name="owner" content="SMK Negeri 2 Karanganyar">
+    <meta name="webcrawlers" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="spiders" content="all" />
+    <meta name='copyright' content='SMK Negeri 2 Karanganyar | XIIRA'>
     <link rel="stylesheet" href="{{asset('assets/app.css')}}">
     <link rel="stylesheet" href="{{ asset('backend/vendors/fontawesome/all.min.css') }}">
 </head>
@@ -65,8 +80,8 @@
                                         @endauth
                                         @guest
                                         <a href="{{url('site/cek-pengaduan')}}"
-                                        class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
-                                        Cek Pengaduan</a>
+                                            class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white transition duration-150 ease-in-out bg-transparent bg-indigo-600 border border-transparent md:px-3 md:w-auto md:rounded-md lg:px-5 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
+                                            Cek Pengaduan</a>
                                         @endguest
                                     </span>
                                 </div>

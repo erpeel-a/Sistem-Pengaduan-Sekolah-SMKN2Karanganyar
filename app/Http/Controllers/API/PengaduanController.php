@@ -117,12 +117,21 @@ class PengaduanController extends Controller
 
     public function destroy($id)
     {
-        Pengaduan::destroy($id);
-        Activity::create([
-            'activity' => Auth::user()->name . ' menghapus pengaduan/aspirasi',
-        ]);
-        return response()->json([
-            'message' => 'pengaduan berhasil dihapus',
-        ], 200);
+        if($id){
+            $pengaduan = Pengaduan::findOrfail($id);
+                if($pengaduan->berkas_pendukung){
+                    if(file_exists($pengaduan->berkas_pendukung)){
+                        unlink($pengaduan->berkas_pendukung);
+                        $pengaduan->delete();
+                    }
+                }
+                $pengaduan->delete();
+                Activity::create([
+                    'activity' => Auth::user()->name . ' menghapus pengaduan/aspirasi',
+                ]);
+                return Helper::success($pengaduan, 'Data Pengaduan Berhasil dihapus');
+        }else{
+            return Helper::error(null, 'Data Pengaduan tidak ditemukan', 401);
+        }
     }
 }
