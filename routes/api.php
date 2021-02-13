@@ -36,7 +36,7 @@ Route::group(['prefix' => '/v1'], function () {
         Route::get('/pengaduan', [PengaduanController::class, 'index']); // search and show all pengaduan
         Route::get('/pengaduan/{id}', [PengaduanController::class, 'index']); // show detail pengaduan
         Route::post('/pengaduan', [PengaduanController::class, 'store']); // store pengaduan
-        Route::delete('/pengaduan/{id}/delete', [PengaduanController::class, 'destroy']); // delete pengaduan
+        Route::delete('/pengaduan/{id}', [PengaduanController::class, 'destroy']); // delete pengaduan
         // tanggapan
         Route::get('/tanggapan', [TanggapanController::class, 'index']); // all tanggapan
         Route::get('/tanggapan/pengaduan/{id}', [TanggapanController::class, 'index']); //spesific tanggapan
