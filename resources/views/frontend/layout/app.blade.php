@@ -14,7 +14,7 @@
     <meta name="robots" content="index,follow" />
     <meta name="Classification" content="Layanan">
     <meta name="author" content="Muhamad Zainal Arifin,Hendra Agil S,Niko Febriyanto">
-    <meta name="designer" content="Muhamad Zainal arifin">
+    <meta name="developer" content="Muhamad Zainal arifin, Hendra Agil S, Niko Febriayanto">
     <meta name="owner" content="SMK Negeri 2 Karanganyar">
     <meta name="webcrawlers" content="all" />
     <meta name="rating" content="general" />

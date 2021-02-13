@@ -5,15 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }}</title>
-
+    <meta name="subject" content="Website Layanan Pengaduan SMK Negeri 2 Karanganyar">
+    <meta name="google-site-verification" content="eA5vWNqCfogT0bO_jGCuJrUwkt1bzfvbYUGlRguZWY" />
+    <meta name="language" content="Indonesia">
+    <meta name="robots" content="index,follow" />
+    <meta name="Classification" content="Layanan">
+    <meta name="author" content="Muhamad Zainal Arifin,Hendra Agil S,Niko Febriyanto">
+    <meta name="developer" content="Muhamad Zainal arifin, Hendra Agil S, Niko Febriayanto">
+    <meta name="owner" content="SMK Negeri 2 Karanganyar">
+    <meta name="webcrawlers" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="spiders" content="all" />
+    <meta name='copyright' content='SMK Negeri 2 Karanganyar | XIIRA'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('backend/css/bootstrap.css') }}">
-
     <link rel="stylesheet" href="{{ asset('backend/vendors/iconly/bold.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/vendors/simple-datatables/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/vendors/fontawesome/all.min.css') }}">
-
     <link rel="stylesheet" href="{{ asset('backend/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}">
