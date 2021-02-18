@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Mail;
 use App\Mail\ConfirmMail;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PengaduanController extends Controller
 {
@@ -70,5 +71,12 @@ class PengaduanController extends Controller
         // send mail to user
         Mail::to($pengaduan)->send(new ConfirmMail($pengaduan));
         return redirect(route('pengaduan'))->with('status', 'Data Pengaduan Berhasil Ditanggapi');
+    }
+
+    public function createPDF()
+    {
+        $pengaduan = Pengaduan::all();
+        $pdf = PDF::loadView('backend.pages.pengaduan.pengaduan_pdf', ['pengaduan' => $pengaduan]);
+        return $pdf->download('laporan-pengaduan.pdf');
     }
 }

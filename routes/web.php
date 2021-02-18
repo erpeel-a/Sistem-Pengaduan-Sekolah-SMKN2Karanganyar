@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth', 'rolecheck:admin,petugas']], function () 
         //pengaduan
         Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan');
         Route::get('/pengaduan/detail/{id}', [PengaduanController::class, 'detail'])->name('detail.laporan');
+        Route::get('/pengaduan/createPDF', [PengaduanController::class, 'createPDF'])->name('print.laporan');
         // Route::post('/pengaduan/detail/{id}', [PengaduanController::class, 'update'])->name('update.laporan');
         Route::get('/tanggapan/{id}', [PengaduanController::class, 'tanggapan'])->name('tanggapan');
         Route::post('/tanggapan/{id}', [PengaduanController::class, 'storeTanggapan'])->name('store.tanggapan');

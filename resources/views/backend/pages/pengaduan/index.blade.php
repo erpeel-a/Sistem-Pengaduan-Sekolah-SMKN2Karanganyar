@@ -20,6 +20,7 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
+                <a href="{{ route('print.laporan') }}" class="btn btn-primary"><i class="fas fa-print"></i></a>
                 @if (session('status'))
                     <div class="alert alert-success mt-1">
                         {{ session('status') }}
